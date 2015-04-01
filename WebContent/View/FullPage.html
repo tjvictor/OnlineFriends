@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../JS/jquery.fullPage.css">
+<script type="text/javascript" src="../JS/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="../JS/jquery-ui.js"></script>
+<script type="text/javascript" src="../JS/jquery.fullPage.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#fullpage').fullpage(
+				{
+					verticalCentered : false,
+					css3 : true,
+					sectionsColor : [ '#254875', '#00FF00', '#254587',
+							'#695684' ],
+					anchors : [ 'page1', 'page2', 'page3', 'page4' ],
+					navigation : false,
+					navigationTooltips : [ 'fullPage.js', 'Powerful',
+							'Amazing', 'Simple' ],
+
+				})
+	})
+</script>
+</head>
+<body>
+	<div id="header">Header</div>
+	<div id="footer">Footer</div>
+	<div id="fullpage">
+		<div class="section"><div class="intro">第一屏</div></div>
+		<div class="section"><div class="intro">第二屏</div></div>
+		<div class="section"><div class="intro">
+			<div class="slide">第三屏的第一屏</div>
+			<div class="slide">第三屏的第二屏</div>
+			<div class="slide">第三屏的第三屏</div>
+			<div class="slide">第三屏的第四屏</div></div>
+		</div>
+		<div class="section"><div class="intro">第四屏</div></div>
+	</div>
+</body>
+</html>

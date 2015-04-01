@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Testing</title>
+<link href="../JS/jquery-ui.css" rel="stylesheet">
+<style type="text/css">
+#loading-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.65;
+	z-index: 20000;
+	background-color: grey;
+}
+
+.MenuBackColor, .MenuMourseHoverColor:hover {
+	height: 100%;
+	line-height: 30px;
+	background-color: #FFCC99;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.MenuMourseHoverColor:hover {
+	opacity: 0.65;
+}
+</style>
+<script type="text/javascript" src="../JS/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="../JS/core.js"></script>
+<script type="text/javascript">
+	function showHide() {
+		$('#loading-mask').fadeToggle("slow");
+	}
+	function menuRedirect(index, obj) {
+		$("div.MenuBackColor").removeClass("MenuBackColor");
+		$(obj).addClass("MenuBackColor");
+		callAjax('../news/menu.do?index=' + index, '', 'main-Content', '', '', 'recalculateBottom', '');
+	}
+	function newsOpen(newsId) {
+		showHide();
+		var top = ($(window).height() - $('#popup-div').height()) / 2;
+		var left = ($(window).width() - $('#popup-div').width()) / 2;
+		var height = $('#popup-div').height() - 16;
+		//$('#popup-div').css("width", "60%");
+		$('#popup-content').css("height", height);
+		$('#popup-div').css("left", left);
+		$('#popup-div').css("top", top);
+		$('#popup-div').toggle();
+		callAjax('../news/open.do', '', 'popup-content', '', '', '', '');
+	}
+	function popupClosed() {
+		$('#popup-div').toggle();
+		showHide();
+	}
+	function recalculateBottom(){
+		var height=$(window).height()-30-30-$('#main-Content').height();
+		if(height < 0){
+			$('#main-bottom').css("position","static");
+		}
+		else{
+			$('#main-bottom').css("position","absolute");
+		}
+			
+			
+		
+	}
+</script>
+</head>
+<body>
+	<!-- Global DIV Start -->
+	<div id='loading-mask' style="display: none;"></div>
+
+
+	<div id='popup-div'
+		style="position: absolute; display: none; width: 400px; height: 400px; background-color: white; z-index: 30000;">
+		<div style="background-color: #136C9E; height: 16px;">
+			<div style="float: left;">Title</div>
+			<div style="float: right;" onclick="popupClosed()">
+				<img alt="exit" src="../res/close.png" />
+			</div>
+		</div>
+		<div id="popup-content">
+			<div id="progress-mask"
+				style="width: 100%; height: 100%; margin-top: 20px; text-align: center;">
+				<img alt="loading" src="../res/loading.gif" />loading ...
+			</div>
+		</div>
+
+	</div>
+	<!-- Global DIV End -->
+
+	<!-- Menu Block Start -->
+	<div
+		style="width: 100%; height: 30px; background-color: #0080C0; opacity: 0.70;">
+		<!-- <div style="position: relative; left: 10%; width: 80%; height: 30px;"> -->
+		<div style="margin-left: 10%; width: 80%; height: 30px;">
+			<table
+				style="text-align: center; width: 100%; vertical-align: middle; height: 100%; border-collapse: collapse;">
+				<tr>
+					<td style="padding: 0;"><div
+							class="MenuBackColor MenuMourseHoverColor"
+							onclick="menuRedirect(1, this)">MENU1</div></td>
+					<td style="padding: 0;"><div class="MenuMourseHoverColor"
+							onclick="menuRedirect(2, this)">MENU2</div></td>
+					<td style="padding: 0;"><div class="MenuMourseHoverColor"
+							onclick="menuRedirect(3, this)">MENU3</div></td>
+					<td style="padding: 0;"><div class="MenuMourseHoverColor"
+							onclick="menuRedirect(4, this)">MENU4</div></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- Menu Block End -->
+
+	<!-- Content Block Start -->
+	<div id="main-Content"
+		style="width: 80%; height: 100%; margin-left: 10%; ">
+
+		<!-- News Block Start -->
+		<div style="width: 80%; height: 100%; margin-top: 5px;">
+			<div
+				style="width: 100%; border-bottom: 1px solid grey; margin-bottom: 10px;">
+				goodline</div>
+			<div id="news1" style="cursor: pointer;" onclick="newsOpen(1)">data
+				1</div>
+			<div id="news2" style="cursor: pointer;" onclick="newsOpen(2)">data
+				2</div>
+			<div id="news3" style="cursor: pointer;" onclick="newsOpen(3)">data
+				3</div>
+			<div id="news4" style="cursor: pointer;" onclick="newsOpen(4)">data
+				4</div>
+			<div id="news5" style="cursor: pointer;" onclick="newsOpen(5)">data
+				5</div>
+			<div id="news6" style="cursor: pointer;" onclick="newsOpen(6)">data
+				6</div>
+			<div id="news7" style="cursor: pointer;" onclick="newsOpen(7)">data
+				7</div>
+			<div id="news8" style="cursor: pointer;" onclick="newsOpen(8)">data
+				8</div>
+			<div id="news9" style="cursor: pointer;" onclick="newsOpen(9)">data
+				9</div>
+			<div id="news10" style="cursor: pointer;" onclick="newsOpen(10)">data
+				10</div>
+			<div id="news11" style="cursor: pointer;" onclick="newsOpen(11)">data
+				11</div>
+		</div>
+		<!-- News Block End -->
+
+		<!-- Presentation Block Start -->
+		<div style="width: 80%; height: 100%; margin-top: 5px;">
+			<div style="width: 100%; border-bottom: 1px solid grey;">
+				Presentation</div>
+			<div>
+				<table>
+					<tr>
+						<td><div
+								style="width: 360px; height: 215px; position: relative;">
+								<img src="../res/photo1.jpg" alt="photo1"
+									onmouseover="wordShow(photo1show)"
+									onmouseout="wordHide(photo1show)" />
+								<div id="photo1show" onmouseover="wordShow(photo1show)"
+									onmouseout="wordHide(photo1show)"
+									style="width: 100%; height: 30px; opacity: 0.65; background-color: black; display: none; position: absolute; bottom: 0px;">
+									<div style="width: 100%;">
+										<font color="white">Information</font>
+									</div>
+								</div>
+							</div></td>
+						<td><div
+								style="width: 360px; height: 215px; position: relative;">
+								<img src="../res/photo1.jpg" alt="photo2"
+									onmouseover="wordShow(photo2show)"
+									onmouseout="wordHide(photo2show)" />
+								<div id="photo2show" onmouseover="wordShow(photo2show)"
+									onmouseout="wordHide(photo2show)"
+									style="width: 100%; height: 30px; opacity: 0.65; background-color: black; display: none; position: absolute; bottom: 0px;">
+									<div style="width: 100%;">
+										<font color="white">Information</font>
+									</div>
+								</div>
+							</div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- Presentation Block End -->
+
+	</div>
+	<!-- Content Block End -->
+
+	<!-- Bottom Block Start -->
+	<div id="main-bottom"
+		style="position: absolute; left: 0; bottom: 0; width: 100%; height: 30px;">
+		<div style="width: 100%; border-top: 1px solid grey;">Information</div>
+	</div>
+	<!-- Bottom Block End -->
+</body>
+</html>

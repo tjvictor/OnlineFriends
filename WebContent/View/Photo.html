@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../JS/jquery-1.11.2.js"></script>
+<script type="text/javascript">
+	function wordShow(id) {
+		$(id).show();
+	}
+	function wordHide(id) {
+		$(id).hide();
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><div style="width: 360px; height: 215px; position: relative"
+					onmouseover="wordShow(photo1show)"
+					onmouseout="wordHide(photo1show)">
+					<img src="../res/photo1.jpg" alt="photo1" />
+					<div id="photo1show" onmouseover="wordShow(photo1show)"
+						onmouseout="wordHide(photo1show)"
+						style="width: 100%; height: 30px; opacity: 0.65; background-color: black; display: none; position: absolute; bottom: 0;">
+						<font color="white">Information</font>
+					</div>
+				</div></td>
+			<td><div style="width: 360px; height: 215px; position: relative"
+					onmouseover="wordShow(photo2show)"
+					onmouseout="wordHide(photo2show)">
+					<img src="../res/photo1.jpg" alt="photo2" />
+					<div id="photo2show" onmouseover="wordShow(photo2show)"
+						onmouseout="wordHide(photo2show)"
+						style="width: 100%; height: 30px; opacity: 0.65; background-color: black; display: none; position: absolute; bottom: 0;">
+						<font color="white">Information</font>
+					</div>
+				</div></td>
+			<td><div style="width: 360px; height: 215px; position: relative"
+					onmouseover="wordShow(photo3show)"
+					onmouseout="wordHide(photo3show)">
+					<img src="../res/photo1.jpg" alt="photo3" />
+					<div id="photo3show" onmouseover="wordShow(photo3show)"
+						onmouseout="wordHide(photo3show)"
+						style="width: 100%; height: 30px; opacity: 0.65; background-color: black; display: none; position: absolute; bottom: 0;">
+						<font color="white">Information</font>
+					</div>
+				</div></td>
+
+		</tr>
+
+	</table>
+
+
+</body>
+</html>

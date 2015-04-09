@@ -13,7 +13,7 @@ public class AjaxRequest {
 	@RequestMapping("/news/open.do")
 	// @ResponseBody
 	public String testLogin1(HttpServletRequest request) {
-		return "NewsTemplate";
+		return "PhotoTemplate";
 	}
 
 	@RequestMapping("/news/menu.do")

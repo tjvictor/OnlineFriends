@@ -1,7 +1,11 @@
-<div
-	style="width: 100%; height: 100%; background-image: url(../res/photo1.png)">
-	<div
-		style="position: absolute; left: 0; bottom: 0; width: 100%; height: 30px;opacity: 0.45;">
-		<div style="width: 100%; border-top: 1px solid grey;">Information</div>
+<div style="width: 360px; height: 215px; position: relative;">
+	<img src="../res/photo1.jpg" alt="photo1"
+		onmouseover="wordShow(photo1show)" onmouseout="wordHide(photo1show)" />
+	<div id="photo1show" onmouseover="wordShow(photo1show)"
+		onmouseout="wordHide(photo1show)"
+		style="width: 100%; height: 30px; opacity: 0.65; background-color: black; display: none; position: absolute; bottom: 0px;">
+		<div style="width: 100%;">
+			<font color="white">Information</font>
+		</div>
 	</div>
 </div>

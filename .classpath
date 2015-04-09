@@ -16,5 +16,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/common-logging 1.2"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/spring 4.1.4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/aopaliance"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

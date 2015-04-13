@@ -18,5 +18,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/aopaliance"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hibernate"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mysql-connector-java-5.1.34-bin"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/aspectjweaver-1.5.0"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

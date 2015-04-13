@@ -17,7 +17,7 @@
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<!-- 自动扫描的包名 -->
-	<context:component-scan base-package="FirstServlet,RequestEntry"></context:component-scan>
+	<context:component-scan base-package="FirstServlet,RequestEntry,com.ol.mvc"></context:component-scan>
 	
 	<context:annotation-config />
 

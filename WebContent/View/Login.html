@@ -3,13 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="../JS/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="../JS/core.js"></script>
+<script type="text/javascript">
+	function submitRequest() {
+		callAjax('../login.do', '', 'content', '', '', '', '');
+	}
+</script>
 </head>
 <body>
 	<div
 		style="width: 100%; height: 100%; text-align: center; -webkit-border-radius: 15px; border-radius: 15px; border: 1px red solid">
-	
-		<div style="margin-left:auto;margin-right:auto;">
-			<table style="margin-left:auto;margin-right:auto;">
+
+		<div style="margin-left: auto; margin-right: auto;">
+			<table style="margin-left: auto; margin-right: auto;">
 				<tr>
 					<td><label for="accountTxt">Account</label></td>
 					<td><input id="accountTxt" type="text" /></td>
@@ -20,10 +27,11 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right"><input id="loginBtn"
-						type="button" value="sign up" /></td>
+						type="button" value="sign up" onclick="submitRequest()" /></td>
 				</tr>
 			</table>
 		</div>
+		<div id="content"></div>
 	</div>
 </body>
 </html>

@@ -19,8 +19,19 @@ public class AjaxMVC {
 	@ResponseBody()
 	public String Login(HttpServletRequest request) {
 		
-		int i = ls.loginCount();
+		String userId = request.getParameter("id");
+		String password=request.getParameter("pwd");
 		
-		return String.valueOf(i);
+		return String.valueOf(ls.login(userId, password));
+	}
+	
+	@RequestMapping("/addLogin.do")
+	@ResponseBody()
+	public String AddLogin(HttpServletRequest request) {
+		
+		String userId = request.getParameter("id");
+		String password=request.getParameter("pwd");
+		
+		return String.valueOf(ls.addLogin(userId, password));
 	}
 }

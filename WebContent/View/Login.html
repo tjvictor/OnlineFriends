@@ -6,8 +6,19 @@
 <script type="text/javascript" src="../JS/jquery-1.11.2.js"></script>
 <script type="text/javascript" src="../JS/core.js"></script>
 <script type="text/javascript">
-	function submitRequest() {
-		callAjax('../login.do', '', 'content', '', '', '', '');
+	function loginRequest() {
+		var id = $('#accountTxt').val();
+		var pwd = $('#pwdTxt').val();
+
+		callAjax('../login.do?id=' + id + '&pwd=' + pwd, '', 'content', '', '',
+				'', '');
+	}
+	function addloginRequest() {
+		var id = $('#accountTxt').val();
+		var pwd = $('#pwdTxt').val();
+
+		callAjax('../addLogin.do?id=' + id + '&pwd=' + pwd, '', 'content', '', '',
+				'', '');
 	}
 </script>
 </head>
@@ -27,7 +38,11 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right"><input id="loginBtn"
-						type="button" value="sign up" onclick="submitRequest()" /></td>
+						type="button" value="login" onclick="loginRequest()" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right"><input id="addloginBtn"
+						type="button" value="add new" onclick="addloginRequest()" /></td>
 				</tr>
 			</table>
 		</div>

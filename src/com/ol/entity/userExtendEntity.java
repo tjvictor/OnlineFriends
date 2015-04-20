@@ -29,7 +29,7 @@ public class userExtendEntity {
 	@Column(name="Hobby")
 	private String hobby;
 	
-	@Column(name="Avatar")
+	@Column(name="Avatar", length=102400)
 	private byte[] avatar;
 
 	public String getUserName() {

@@ -29,17 +29,28 @@ public class loginDAO extends baseDAO {
 		Session session = sessionFactory.getCurrentSession();
 		ue.setId(userId);
 		ue.setPassword(password);
+		
+		userExtendEntity uee = new userExtendEntity();
+		uee.setUserId(userId);
+		uee.setAge(10);
+		uee.setHobby("like");
+		uee.setUserName("Grubby");
+		ue.setUserExtend(uee);
+		
 		session.save(ue);
 		return true;
 	}
 	
-	
-	public List<loginEntity> getAllUser() {
-		String hsql = "from login";
+	public userEntity getUserEntityById(String userId){
+		String hql = String.format(
+				"from userEntity as u where u.id='%s'", userId);
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery(hsql);
-		userEntity ue = new userEntity();
+		Query query = session.createQuery(hql);
 		
-		return query.list();
+		
+		List<userEntity> ueList = query.list();
+		if(ueList.size()>0)
+			return ueList.get(0);
+		return null;
 	}
 }

@@ -1,5 +1,8 @@
 package com.ol.service;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import com.ol.dao.loginDAO;
 import com.ol.entity.userEntity;
 
@@ -19,7 +22,7 @@ public class loginService {
 		return loginDao.login(userId, password);
 	}
 	
-	public boolean addLogin(String userId, String password) {
+	public boolean addLogin(String userId, String password) throws FileNotFoundException, IOException {
 		return loginDao.addLogin(userId, password);
 	}
 	

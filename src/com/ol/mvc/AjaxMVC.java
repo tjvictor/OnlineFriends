@@ -1,5 +1,8 @@
 package com.ol.mvc;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -32,7 +35,11 @@ public class AjaxMVC {
 
 	@RequestMapping("/addLogin.do")
 	@ResponseBody()
-	public String AddLogin(HttpServletRequest request) {
+	public String AddLogin(HttpServletRequest request)
+			throws FileNotFoundException, IOException {
+
+		System.setProperty("webapp.root", request.getServletContext()
+				.getRealPath("/"));
 
 		String userId = request.getParameter("id");
 		String password = request.getParameter("pwd");
